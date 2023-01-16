@@ -1,4 +1,4 @@
-app = "onewheel-blog-cd31"
+app = "onewheel-blog-cd31-remix"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = [ ]
