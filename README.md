@@ -1,3 +1,7 @@
+# Deploy on fly
+
+[Remix Indie Stack](https://onewheel-blog-cd31-remix.fly.dev/)
+
 # Remix Indie Stack
 
 ![The Remix Indie Stack](https://repository-images.githubusercontent.com/465928257/a241fa49-bd4d-485a-a2a5-5cb8e4ee0abf)
@@ -86,7 +90,7 @@ Prior to your first deployment, you'll need to do a few things:
 - Create two apps on Fly, one for staging and one for production:
 
   ```sh
-  fly apps create onewheel-blog-cd31
+  fly apps create onewheel-blog-cd31-remix
   fly apps create onewheel-blog-cd31-staging
   ```
 
@@ -109,7 +113,7 @@ Prior to your first deployment, you'll need to do a few things:
 - Add a `SESSION_SECRET` to your fly app secrets, to do this you can run the following commands:
 
   ```sh
-  fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app onewheel-blog-cd31
+  fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app onewheel-blog-cd31-remix
   fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app onewheel-blog-cd31-staging
   ```
 
@@ -118,7 +122,7 @@ Prior to your first deployment, you'll need to do a few things:
 - Create a persistent volume for the sqlite database for both your staging and production environments. Run the following:
 
   ```sh
-  fly volumes create data --size 1 --app onewheel-blog-cd31
+  fly volumes create data --size 1 --app onewheel-blog-cd31-remix
   fly volumes create data --size 1 --app onewheel-blog-cd31-staging
   ```
 
